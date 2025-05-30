@@ -4,3 +4,5 @@
 ## To-Do
 - quiz 4 προσθήκη κώδικα
 - quiz 5, 6, 7 προσθήκη λύσεων (κώδικας)
+- add lab exercices
+- add pdf with basic commands
