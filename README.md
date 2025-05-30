@@ -4,5 +4,6 @@
 ## To-Do
 - quiz 4 προσθήκη κώδικα
 - quiz 5, 6, 7 προσθήκη λύσεων (κώδικας)
+- quiz 8 προσθήκη εικόνας βιβλιο σελ 317, 4.11
 - add lab exercices
 - add pdf with basic commands
