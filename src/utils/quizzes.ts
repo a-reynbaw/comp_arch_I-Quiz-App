@@ -76,5 +76,5 @@ export const quizzes = [
     title: 'Κουίζ 11',
     description: '',
     questions: quiz11,
-  }
+  },
 ];

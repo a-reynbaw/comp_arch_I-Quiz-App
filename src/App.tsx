@@ -10,7 +10,9 @@ function App() {
     <div className="min-h-screen bg-gray-100 p-8">
       <div className="mx-auto max-w-6xl">
         <div className="mb-8 text-center">
-          <h1 className="mb-2 text-4xl font-bold text-gray-800">Κουίζ Αρχιτεκτονικής Υπολογιστών I</h1>
+          <h1 className="mb-2 text-4xl font-bold text-gray-800">
+            Κουίζ Αρχιτεκτονικής Υπολογιστών I
+          </h1>
           <button
             onClick={() => setIsExamModeOpen(true)}
             className="rounded-lg bg-green-600 px-4 py-2 text-white transition-colors hover:bg-green-700"

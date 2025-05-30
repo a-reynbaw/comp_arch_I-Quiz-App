@@ -6,22 +6,18 @@
       {
         "text": "R1",
         "correct": true
-
       },
       {
         "text": "R2",
         "correct": false
-
       },
       {
         "text": "Ακριβώς τον ίδιο και οι δύο",
         "correct": false
-
       },
       {
         "text": "Δεν έχουμε αρκετά δεδομένα",
         "correct": false
-
       },
       {
         "text": "άλλο",

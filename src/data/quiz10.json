@@ -6,37 +6,30 @@
       {
         "text": "A $\\lt$ Β $\\lt$ Γ",
         "correct": false
-
       },
       {
         "text": "A $\\lt$ Γ $\\lt$ Β",
         "correct": false
-
       },
       {
         "text": "Β $\\lt$ Α $\\lt$ Γ",
         "correct": false
-
       },
       {
         "text": "Β $\\lt$ Γ $\\lt$ Α",
         "correct": false
-
       },
       {
         "text": "Γ $\\lt$ Α $\\lt$ Β",
         "correct": false
-
       },
       {
         "text": "Γ $\\lt$ Β $\\lt$ Α",
         "correct": true
-
       },
       {
         "text": "άλλο",
         "correct": false
-
       }
     ]
   }

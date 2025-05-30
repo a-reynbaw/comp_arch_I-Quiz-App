@@ -6,32 +6,26 @@
       {
         "text": "ο Υ1",
         "correct": false
-
       },
       {
         "text": "ο Υ2",
         "correct": false
-
       },
       {
         "text": "ο Υ3",
         "correct": true
-
       },
       {
         "text": "ο Υ4",
         "correct": false
-
       },
       {
         "text": "ο Υ5",
         "correct": false
-
       },
       {
         "text": "άλλο",
         "correct": false
-
       }
     ]
   }

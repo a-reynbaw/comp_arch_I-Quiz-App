@@ -70,11 +70,9 @@ export default function QuizDialog({ quiz, isOpen, onClose }: QuizDialogProps) {
   return (
     <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 p-4">
       <MathJaxContext>
-        <div className="w-full max-w-2xl max-h-[90vh] rounded-xl bg-white p-6 flex flex-col">
+        <div className="flex max-h-[90vh] w-full max-w-2xl flex-col rounded-xl bg-white p-6">
           <div className="mb-6 flex items-center justify-between">
-            <h3 className="text-xl font-bold">
-              Ερώτηση
-            </h3>
+            <h3 className="text-xl font-bold">Ερώτηση</h3>
             <button onClick={handleClose} className="text-gray-500 hover:text-gray-700">
               <X size={24} />
             </button>
@@ -103,7 +101,11 @@ export default function QuizDialog({ quiz, isOpen, onClose }: QuizDialogProps) {
 
           <div className="max-h-60 space-y-2 overflow-y-auto">
             {question.answers.map((answer, index) => (
-              <div key={index} onClick={() => handleAnswerClick(index)} className={getAnswerClassName(index)}>
+              <div
+                key={index}
+                onClick={() => handleAnswerClick(index)}
+                className={getAnswerClassName(index)}
+              >
                 <MathJax>{renderWithNewlines(answer.text)}</MathJax>
               </div>
             ))}

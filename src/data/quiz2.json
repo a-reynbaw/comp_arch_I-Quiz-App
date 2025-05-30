@@ -6,27 +6,22 @@
       {
         "text": "Φ1",
         "correct": true
-
       },
       {
         "text": "Φ2",
         "correct": false
-
       },
       {
         "text": "Φ3",
         "correct": false
-
       },
       {
         "text": "Φ1 και Φ2",
         "correct": false
-
       },
       {
         "text": "Φ2 και Φ3",
         "correct": false
-
       },
       {
         "text": "άλλο",
