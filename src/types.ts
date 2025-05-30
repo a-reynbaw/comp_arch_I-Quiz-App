@@ -1,11 +1,11 @@
 export interface Answer {
   text: string;
   correct: boolean;
-  description: string;
 }
 
 export interface Question {
   question: string;
+  solution: string;
   image?: string; // Optional
   answers: Answer[];
 }
