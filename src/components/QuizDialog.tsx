@@ -7,8 +7,6 @@ import { useEffect, useState } from 'react';
 import ReactMarkdown from 'react-markdown';
 import rehypeHighlight from 'rehype-highlight';
 
-// You can choose different themes
-
 interface QuizDialogProps {
   quiz: Quiz;
   isOpen: boolean;
@@ -50,17 +48,18 @@ export default function QuizDialog({ quiz, isOpen, onClose }: QuizDialogProps) {
     setSelectedAnswer(null);
   };
 
+  // DARK THEME: update answer class names
   const getAnswerClassName = (index: number) => {
     if (selectedAnswer === null) {
-      return 'border border-gray-300 p-4 rounded-lg mb-2 hover:bg-gray-50 cursor-pointer';
+      return 'border border-gray-700 bg-gray-800 text-gray-100 p-4 rounded-lg mb-2 hover:bg-gray-700 cursor-pointer';
     }
     if (question.answers[index].correct) {
-      return 'border border-green-500 bg-green-50 p-4 rounded-lg mb-2';
+      return 'border border-green-500 bg-green-900 text-green-200 p-4 rounded-lg mb-2';
     }
     if (index === selectedAnswer && !question.answers[index].correct) {
-      return 'border border-red-500 bg-red-50 p-4 rounded-lg mb-2';
+      return 'border border-red-500 bg-red-900 text-red-200 p-4 rounded-lg mb-2';
     }
-    return 'border border-gray-300 p-4 rounded-lg mb-2 opacity-50';
+    return 'border border-gray-700 bg-gray-800 text-gray-400 p-4 rounded-lg mb-2 opacity-50';
   };
 
   // Helper function to detect if content contains math expressions
@@ -87,7 +86,7 @@ export default function QuizDialog({ quiz, isOpen, onClose }: QuizDialogProps) {
               const isCodeBlock = match && className;
 
               return isCodeBlock ? (
-                <pre className="overflow-x-auto rounded bg-gray-100 p-2">
+                <pre className="overflow-x-auto rounded bg-gray-900 text-gray-100 p-2">
                   <code className={className} {...props}>
                     {children}
                   </code>
@@ -127,24 +126,24 @@ export default function QuizDialog({ quiz, isOpen, onClose }: QuizDialogProps) {
   };
 
   return (
-    <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 p-4">
+    <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-80 p-4">
       <MathJaxContext>
-        <div className="flex h-[800px] w-full max-w-[1400px] flex-col rounded-xl bg-white p-14">
+        <div className="flex h-[800px] w-full max-w-[1400px] flex-col rounded-xl bg-gray-900 p-14 shadow-2xl">
           <div className="mb-12 flex items-center justify-between">
-            <h3 className="text-xl font-bold">Κουίζ {question.number}</h3>
-            <button onClick={handleClose} className="text-gray-500 hover:text-gray-700">
+            <h3 className="text-xl font-bold text-gray-100">Κουίζ {question.number}</h3>
+            <button onClick={handleClose} className="text-gray-400 hover:text-gray-200">
               <X size={24} />
             </button>
           </div>
 
-          <div className="mb-3 mt-2 h-[800px] overflow-y-auto">
+          <div className="mb-3 mt-2 h-[800px] overflow-y-auto text-gray-100">
             {renderContent(question.question)}
             {currentImage && (
               <div className="mt-4 flex justify-center">
                 <img
                   src={currentImage}
                   alt="Question Illustration"
-                  className="h-auto max-w-full rounded-lg"
+                  className="h-auto max-w-full rounded-lg border border-gray-700 shadow"
                   style={{ maxHeight: '200px' }}
                 />
               </div>
@@ -152,9 +151,11 @@ export default function QuizDialog({ quiz, isOpen, onClose }: QuizDialogProps) {
           </div>
 
           {selectedAnswer !== null && (
-            <div className="mb-1 mt-2 h-[2000px] overflow-y-auto rounded-lg bg-purple-100 p-4">
-              <h4 className="mb-2 font-semibold text-purple-800">Λύση:</h4>
-              {renderContent(question.solution)}
+            <div className="mb-1 mt-2 min-h-[500px] max-h-[2000px] overflow-y-auto rounded-lg bg-purple-950 p-4">
+              <h4 className="mb-2 font-semibold text-purple-300">Λύση:</h4>
+              <div className="text-white">
+                 {renderContent(question.solution)}
+              </div>
             </div>
           )}
 

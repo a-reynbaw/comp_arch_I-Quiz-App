@@ -12,12 +12,12 @@ export default function QuizCard({ quiz }: QuizCardProps) {
 
   return (
     <>
-      <div className="rounded-lg bg-white p-6 shadow-lg transition-shadow hover:shadow-xl">
-        <h2 className="mb-2 text-2xl font-bold">{quiz.title}</h2>
-        <p className="mb-4 text-gray-600">{quiz.description}</p>
+      <div className="rounded-lg bg-gray-900 p-6 shadow-lg transition-shadow hover:shadow-xl border border-gray-700">
+        <h2 className="mb-2 text-2xl font-bold text-gray-100">{quiz.title}</h2>
+        <p className="mb-4 text-gray-300">{quiz.description}</p>
         <button
           onClick={() => setIsOpen(true)}
-          className="flex items-center gap-2 rounded-lg bg-purple-600 px-4 py-2 text-white transition-colors hover:bg-purple-700"
+          className="flex items-center gap-2 rounded-lg bg-purple-700 px-4 py-2 text-white transition-colors hover:bg-purple-800"
         >
           <Play size={20} />
           Ξεκίνα
