@@ -4,27 +4,27 @@
     "solution": "\\( CPI_{\\mathrm{A}} = 1.00 \\) διαδρομή δεδομένων ενός κύκλου)\n\\( CPI_{\\mathrm{Β}} = 1 + 0.25 \\times 2 + 0.30 \\times 2 + 0.15 \\times 2 = 2.40 \\) (2 κύκλοι καθυστέρησης μεταξύ εξαρτώμενων εντολών και των τριών τύπων)\n\\( CPI_{\\mathrm{Γ}} = 1 + 0.25 \\times 1 + 0.30 \\times 0 + 0.15 \\times 0.10 \\times 2 = 1.28 \\) (1 μόνο κύκλος καθυστέρησης για load-use κινδύνους και 0 κύκλοι μεταξύ τύπου R και επόμενης, η ποινή των 2 κύκλων καθυστέρησης για τις διακλαδώσεις δαπανάται μόνο για το 10% των διακλαδώσεων που δεν προβλέπονται σωστά)\n\\( CLK_{\\mathrm{A}} = 60 + 50 + 45 + 60 + 50 ps = 265 ps\\)\n\\( CLK_{\\mathrm{B}} = MAX{60, 50, 45, 60, 50} = 60 ps\\)\n\\( CLK_{\\mathrm{Γ}} = MAX{60, 50, 45, 60, 50} = 60 ps\\)\n\\( T_{mathrm{A}} = I \\times CPI_{\\mathrm{A}} \\times CLK_{\\mathrm{A}} =  350 \\times 10^{12} \\times 1 \\times 265 \\times 10^{-12} s = 92,750 s \\)\n\\( T_{mathrm{B}} = I \\times CPI_{\\mathrm{B}} \\times CLK_{\\mathrm{B}} =  350 \\times 10^{12} \\times 2.40 \\times 60 \\times 10^{-12} s = 50,400 s \\)\n\\( T_{mathrm{Γ}} = I \\times CPI_{\\mathrm{Γ}} \\times CLK_{\\mathrm{Γ}} =  350 \\times 10^{12} \\times 1.28 \\times 60 \\times 10^{-12} s = 26,880 s \\)\n\\( Energy_{\\mathrm{A}} = T_{\\mathrm{A}} \\times Power_{\\mathrm{A}} =  92,750 s \\times * 1 watt = 92,750 joules \\)\n\\( Energy_{\\mathrm{B}} = T_{\\mathrm{B}} \\times Power_{\\mathrm{B}} =  50,400 s \\times * 1.2 watt = 60,480 joules \\)\n\\( Energy_{\\mathrm{Γ}} = T_{\\mathrm{Γ}} \\times Power_{\\mathrm{Γ}} =  26,880 s \\times * 1.3 watt = 34,944 joules \\)\nΆρα \\( Energy_{\\mathrm{Γ}} \\lt Energy_{\\mathrm{B}} \\lt Energy_{\\mathrm{A}}\\)",
     "answers": [
       {
-        "text": "A $\\lt$ Β $\\lt$ Γ",
+        "text": "\\( \\text{A} \\lt \\text{Β} \\lt \\text{Γ} \\)",
         "correct": false
       },
       {
-        "text": "A $\\lt$ Γ $\\lt$ Β",
+        "text": "\\( \\text{A} \\lt \\text{Γ} \\lt \\text{Β} \\)",
         "correct": false
       },
       {
-        "text": "Β $\\lt$ Α $\\lt$ Γ",
+        "text": "\\( \\text{Β} \\lt \\text{Α} \\lt \\text{Γ} \\)",
         "correct": false
       },
       {
-        "text": "Β $\\lt$ Γ $\\lt$ Α",
+        "text": "\\( \\text{Β} \\lt \\text{Γ} \\lt \\text{Α} \\)",
         "correct": false
       },
       {
-        "text": "Γ $\\lt$ Α $\\lt$ Β",
+        "text": "\\( \\text{Γ} \\lt \\text{Α} \\lt \\text{Β} \\)",
         "correct": false
       },
       {
-        "text": "Γ $\\lt$ Β $\\lt$ Α",
+        "text": "\\( \\text{Γ} \\lt \\text{Β} \\lt \\text{Α} \\)",
         "correct": true
       },
       {

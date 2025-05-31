@@ -1,8 +1,13 @@
 import { Quiz } from '../types';
 import { loadImage } from '../utils/loadImage';
 import { MathJax, MathJaxContext } from 'better-react-mathjax';
+import 'highlight.js/styles/github.css';
 import { X } from 'lucide-react';
 import { useEffect, useState } from 'react';
+import ReactMarkdown from 'react-markdown';
+import rehypeHighlight from 'rehype-highlight';
+
+// You can choose different themes
 
 interface QuizDialogProps {
   quiz: Quiz;
@@ -58,7 +63,61 @@ export default function QuizDialog({ quiz, isOpen, onClose }: QuizDialogProps) {
     return 'border border-gray-300 p-4 rounded-lg mb-2 opacity-50';
   };
 
-  const renderWithNewlines = (text: string) => {
+  // Helper function to detect if content contains math expressions
+  const containsMath = (text: string) => {
+    return (
+      text.includes('$$') || text.includes('$') || text.includes('\\(') || text.includes('\\[')
+    );
+  };
+
+  // Helper function to detect if content contains markdown code blocks
+  const containsCodeBlocks = (text: string) => {
+    return text.includes('```') || text.includes('`');
+  };
+
+  const renderContent = (text: string) => {
+    // If content contains code blocks, prioritize markdown rendering
+    if (containsCodeBlocks(text)) {
+      return (
+        <ReactMarkdown
+          rehypePlugins={[rehypeHighlight]}
+          components={{
+            code: ({ className, children, ...props }: any) => {
+              const match = /language-(\w+)/.exec(className || '');
+              const isCodeBlock = match && className;
+
+              return isCodeBlock ? (
+                <pre className="overflow-x-auto rounded bg-gray-100 p-2">
+                  <code className={className} {...props}>
+                    {children}
+                  </code>
+                </pre>
+              ) : (
+                <code {...props}>{children}</code>
+              );
+            },
+          }}
+        >
+          {text}
+        </ReactMarkdown>
+      );
+    }
+
+    // If content contains math, use MathJax
+    if (containsMath(text)) {
+      return (
+        <MathJax>
+          {text.split('\n').map((line, index) => (
+            <span key={index}>
+              {line}
+              <br />
+            </span>
+          ))}
+        </MathJax>
+      );
+    }
+
+    // Default: render as plain text with line breaks
     return text.split('\n').map((line, index) => (
       <span key={index}>
         {line}
@@ -79,7 +138,7 @@ export default function QuizDialog({ quiz, isOpen, onClose }: QuizDialogProps) {
           </div>
 
           <div className="mb-6 max-h-40 overflow-y-auto">
-            <MathJax>{renderWithNewlines(question.question)}</MathJax>
+            {renderContent(question.question)}
             {currentImage && (
               <div className="mt-4 flex justify-center">
                 <img
@@ -95,7 +154,7 @@ export default function QuizDialog({ quiz, isOpen, onClose }: QuizDialogProps) {
           {selectedAnswer !== null && (
             <div className="mb-6 max-h-32 overflow-y-auto rounded-lg bg-blue-50 p-4">
               <h4 className="mb-2 font-semibold text-blue-800">Λύση:</h4>
-              <MathJax>{renderWithNewlines(question.solution)}</MathJax>
+              {renderContent(question.solution)}
             </div>
           )}
 
@@ -106,7 +165,7 @@ export default function QuizDialog({ quiz, isOpen, onClose }: QuizDialogProps) {
                 onClick={() => handleAnswerClick(index)}
                 className={getAnswerClassName(index)}
               >
-                <MathJax>{renderWithNewlines(answer.text)}</MathJax>
+                {renderContent(answer.text)}
               </div>
             ))}
           </div>
