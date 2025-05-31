@@ -13,9 +13,11 @@ interface QuizDialogProps {
   onClose: () => void;
 }
 
+
 export default function QuizDialog({ quiz, isOpen, onClose }: QuizDialogProps) {
   const [selectedAnswer, setSelectedAnswer] = useState<number | null>(null);
   const [currentImage, setCurrentImage] = useState<string | null>(null);
+  const [showSolution, setShowSolution] = useState(false);
 
   useEffect(() => {
     if (!isOpen) {
@@ -86,7 +88,7 @@ export default function QuizDialog({ quiz, isOpen, onClose }: QuizDialogProps) {
               const isCodeBlock = match && className;
 
               return isCodeBlock ? (
-                <pre className="overflow-x-auto rounded bg-gray-900 text-gray-100 p-2">
+                <pre className="overflow-x-auto rounded bg-gray-900 p-2 text-gray-100">
                   <code className={className} {...props}>
                     {children}
                   </code>
@@ -151,15 +153,31 @@ export default function QuizDialog({ quiz, isOpen, onClose }: QuizDialogProps) {
           </div>
 
           {selectedAnswer !== null && (
+            <button
+              className="mb-2 mt-2 rounded-lg bg-purple-700 px-4 py-2 text-white hover:bg-purple-800"
+              onClick={() => setShowSolution((prev) => !prev)}
+            >
+              {showSolution ? 'Απόκρυψη Λύσης' : 'Δες τη Λύση'}
+            </button>
+          )}
+
+          {showSolution && (
+            <div className="mb-1 mt-2 max-h-[600px] min-h-[500px] overflow-y-auto rounded-lg bg-purple-950 p-4">
+              <h4 className="mb-2 font-semibold text-purple-50">Λύση:</h4>
+              <div className="text-white">{renderContent(question.solution)}</div>
+            </div>
+          )}
+
+          {/* {selectedAnswer !== null && (
             <div className="mb-1 mt-2 min-h-[500px] max-h-[2000px] overflow-y-auto rounded-lg bg-purple-950 p-4">
               <h4 className="mb-2 font-semibold text-purple-300">Λύση:</h4>
               <div className="text-white">
                  {renderContent(question.solution)}
               </div>
             </div>
-          )}
+          )} */}
 
-          <div className="h-[1000px] space-y-2 overflow-y-auto mb-8 mt-2">
+          <div className="mb-8 mt-2 h-[1000px] space-y-2 overflow-y-auto">
             {question.answers.map((answer, index) => (
               <div
                 key={index}

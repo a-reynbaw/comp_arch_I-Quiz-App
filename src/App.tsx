@@ -10,7 +10,7 @@ function App() {
     <div className="min-h-screen bg-gray-950 p-8">
       <div className="mx-auto max-w-6xl">
         <div className="mb-8 text-center">
-          <h1 className="mb-2 text-4xl font-bold text-gray-100">
+          <h1 className="mb-10 text-4xl font-bold text-gray-100">
             Κουίζ Αρχιτεκτονικής Υπολογιστών I
           </h1>
           {/* <button
@@ -32,6 +32,8 @@ function App() {
         onClose={() => setIsExamModeOpen(false)}
         allQuizzes={quizzes}
       />
+
+      <h4 className="mb-0 mt-40 text-center text-gray-600">made with love by _a_reynbaw and deathwish</h4>
     </div>
   );
 }

@@ -144,7 +144,7 @@ export default function ExaminationDialog({ isOpen, onClose, allQuizzes }: Exami
             </button>
           </div>
 
-          <div className="flex-grow overflow-y-auto p-4 sm:p-6 text-gray-100">
+          <div className="flex-grow overflow-y-auto p-4 text-gray-100 sm:p-6">
             {score !== null ? (
               <div className="text-center">
                 <h3 className="mb-4 text-2xl font-bold text-gray-100 sm:text-3xl">

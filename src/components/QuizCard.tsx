@@ -12,7 +12,7 @@ export default function QuizCard({ quiz }: QuizCardProps) {
 
   return (
     <>
-      <div className="rounded-lg bg-gray-900 p-6 shadow-lg transition-shadow hover:shadow-xl border border-gray-700">
+      <div className="rounded-lg border border-gray-700 bg-gray-900 p-6 shadow-lg transition-shadow hover:shadow-xl">
         <h2 className="mb-2 text-2xl font-bold text-gray-100">{quiz.title}</h2>
         <p className="mb-4 text-gray-300">{quiz.description}</p>
         <button
