@@ -13,7 +13,6 @@ interface QuizDialogProps {
   onClose: () => void;
 }
 
-
 export default function QuizDialog({ quiz, isOpen, onClose }: QuizDialogProps) {
   const [selectedAnswer, setSelectedAnswer] = useState<number | null>(null);
   const [currentImage, setCurrentImage] = useState<string | null>(null);
@@ -145,8 +144,8 @@ export default function QuizDialog({ quiz, isOpen, onClose }: QuizDialogProps) {
                 <img
                   src={currentImage}
                   alt="Question Illustration"
-                  className="h-auto max-w-full rounded-lg border border-gray-700 shadow"
-                  style={{ maxHeight: '200px' }}
+                  className="h-auto max-w-[600px] rounded-lg border border-gray-700 shadow"
+                  style={{ maxHeight: '400px' }}
                 />
               </div>
             )}
@@ -161,7 +160,7 @@ export default function QuizDialog({ quiz, isOpen, onClose }: QuizDialogProps) {
             </button>
           )}
 
-          {showSolution && (
+          {showSolution && selectedAnswer !== null && (
             <div className="mb-1 mt-2 max-h-[600px] min-h-[500px] overflow-y-auto rounded-lg bg-purple-950 p-4">
               <h4 className="mb-2 font-semibold text-purple-50">Λύση:</h4>
               <div className="text-white">{renderContent(question.solution)}</div>
