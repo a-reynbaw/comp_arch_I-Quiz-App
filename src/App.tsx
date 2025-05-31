@@ -34,7 +34,7 @@ function App() {
       />
 
       <h4 className="mb-0 mt-40 text-center text-gray-600">
-        Mqade with love by _a_reynbaw and deathwish24
+        Made with love by _a_reynbaw and deathwish24
       </h4>
     </div>
   );
