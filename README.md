@@ -1,2 +1,2 @@
-# [CM-Quiz-App](https://cm-quiz-app.netlify.app/)
+# [CompArchI-Quiz-App]
 Μια web εφαρμογή που συλλέγει όλα τα quizzes που δόθηκαν στο μάθημα Αρχιτεκτονικής Υπολογιστών I (Κ14) του DIT ΕΚΠΑ.
