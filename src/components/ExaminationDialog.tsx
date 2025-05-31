@@ -131,7 +131,7 @@ export default function ExaminationDialog({ isOpen, onClose, allQuizzes }: Exami
     } else {
       // During exam
       if (isSelected) {
-        return 'border border-blue-500 bg-blue-50 p-4 rounded-lg mb-2 cursor-pointer'; // Selected
+        return 'border border-purple-500 bg-purple-50 p-4 rounded-lg mb-2 cursor-pointer'; // Selected
       }
       return 'border border-gray-300 p-4 rounded-lg mb-2 hover:bg-gray-50 cursor-pointer'; // Not selected
     }
@@ -161,7 +161,7 @@ export default function ExaminationDialog({ isOpen, onClose, allQuizzes }: Exami
                 </p>
                 <button
                   onClick={() => setCurrentQuestionIndex(0)}
-                  className="mb-4 rounded-lg bg-blue-600 px-5 py-2 text-white transition-colors hover:bg-blue-700 sm:px-6"
+                  className="mb-4 rounded-lg bg-purple-600 px-5 py-2 text-white transition-colors hover:bg-purple-700 sm:px-6"
                 >
                   Έλεγχος Απαντήσεων
                 </button>
@@ -223,7 +223,7 @@ export default function ExaminationDialog({ isOpen, onClose, allQuizzes }: Exami
               <button
                 onClick={goToNextQuestion}
                 disabled={currentQuestionIndex === examQuestions.length - 1}
-                className="rounded-lg bg-blue-600 px-4 py-2 text-white hover:bg-blue-700 disabled:cursor-not-allowed disabled:opacity-50 sm:px-5"
+                className="rounded-lg purple-600 px-4 py-2 text-white hover:bg-purple-700 disabled:cursor-not-allowed disabled:opacity-50 sm:px-5"
               >
                 Επόμενη
               </button>

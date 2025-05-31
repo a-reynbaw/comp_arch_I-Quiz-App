@@ -17,7 +17,7 @@ export default function QuizCard({ quiz }: QuizCardProps) {
         <p className="mb-4 text-gray-600">{quiz.description}</p>
         <button
           onClick={() => setIsOpen(true)}
-          className="flex items-center gap-2 rounded-lg bg-blue-600 px-4 py-2 text-white transition-colors hover:bg-blue-700"
+          className="flex items-center gap-2 rounded-lg bg-purple-600 px-4 py-2 text-white transition-colors hover:bg-purple-700"
         >
           <Play size={20} />
           Ξεκίνα

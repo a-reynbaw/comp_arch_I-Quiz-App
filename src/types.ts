@@ -6,6 +6,7 @@ export interface Answer {
 export interface Question {
   question: string;
   solution: string;
+  number: string;
   image?: string; // Optional
   answers: Answer[];
 }

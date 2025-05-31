@@ -129,15 +129,15 @@ export default function QuizDialog({ quiz, isOpen, onClose }: QuizDialogProps) {
   return (
     <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 p-4">
       <MathJaxContext>
-        <div className="flex max-h-[90vh] w-full max-w-2xl flex-col rounded-xl bg-white p-6">
-          <div className="mb-6 flex items-center justify-between">
-            <h3 className="text-xl font-bold">Ερώτηση</h3>
+        <div className="flex h-[800px] w-full max-w-[1400px] flex-col rounded-xl bg-white p-14">
+          <div className="mb-12 flex items-center justify-between">
+            <h3 className="text-xl font-bold">Κουίζ {question.number}</h3>
             <button onClick={handleClose} className="text-gray-500 hover:text-gray-700">
               <X size={24} />
             </button>
           </div>
 
-          <div className="mb-6 max-h-40 overflow-y-auto">
+          <div className="mb-3 mt-2 h-[800px] overflow-y-auto">
             {renderContent(question.question)}
             {currentImage && (
               <div className="mt-4 flex justify-center">
@@ -152,13 +152,13 @@ export default function QuizDialog({ quiz, isOpen, onClose }: QuizDialogProps) {
           </div>
 
           {selectedAnswer !== null && (
-            <div className="mb-6 max-h-32 overflow-y-auto rounded-lg bg-blue-50 p-4">
-              <h4 className="mb-2 font-semibold text-blue-800">Λύση:</h4>
+            <div className="mb-1 mt-2 h-[2000px] overflow-y-auto rounded-lg bg-purple-100 p-4">
+              <h4 className="mb-2 font-semibold text-purple-800">Λύση:</h4>
               {renderContent(question.solution)}
             </div>
           )}
 
-          <div className="max-h-60 space-y-2 overflow-y-auto">
+          <div className="h-[1000px] space-y-2 overflow-y-auto mb-8 mt-2">
             {question.answers.map((answer, index) => (
               <div
                 key={index}
