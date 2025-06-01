@@ -13,14 +13,17 @@
   },
   "dependencies": {
     "@trivago/prettier-plugin-sort-imports": "^5.2.2",
+    "@types/react-pdf": "^5.0.7",
     "better-react-mathjax": "^2.0.3",
     "js-cookie": "^3.0.5",
     "lucide-react": "^0.344.0",
+    "pdfjs-dist": "^5.2.133",
     "prettier": "^3.5.3",
     "prettier-plugin-tailwindcss": "^0.6.11",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-markdown": "^10.1.0",
+    "react-pdf": "^9.2.1",
     "rehype-highlight": "^7.0.2"
   },
   "devDependencies": {
