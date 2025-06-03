@@ -1,14 +1,14 @@
-import quiz1 from '../data/quiz1.json';
-import quiz2 from '../data/quiz2.json';
-import quiz3 from '../data/quiz3.json';
-import quiz4 from '../data/quiz4.json';
-import quiz5 from '../data/quiz5.json';
-import quiz6 from '../data/quiz6.json';
-import quiz7 from '../data/quiz7.json';
-import quiz8 from '../data/quiz8.json';
-import quiz9 from '../data/quiz9.json';
-import quiz10 from '../data/quiz10.json';
-import quiz11 from '../data/quiz11.json';
+import quiz1 from '../data/quizzes/quiz1.json';
+import quiz2 from '../data/quizzes/quiz2.json';
+import quiz3 from '../data/quizzes/quiz3.json';
+import quiz4 from '../data/quizzes/quiz4.json';
+import quiz5 from '../data/quizzes/quiz5.json';
+import quiz6 from '../data/quizzes/quiz6.json';
+import quiz7 from '../data/quizzes/quiz7.json';
+import quiz8 from '../data/quizzes/quiz8.json';
+import quiz9 from '../data/quizzes/quiz9.json';
+import quiz10 from '../data/quizzes/quiz10.json';
+import quiz11 from '../data/quizzes/quiz11.json';
 
 export const quizzes = [
   {

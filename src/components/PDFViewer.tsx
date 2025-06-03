@@ -35,7 +35,7 @@ export default function PDFViewer({ file, title }: PDFViewerProps) {
       <button
         onClick={handleDownload}
         disabled={isDownloading}
-        className="rounded-lg bg-purple-700 px-4 py-2 text-white transition-colors hover:bg-purple-800 disabled:cursor-not-allowed disabled:opacity-50"
+        className="h-12 rounded-lg bg-purple-700 px-4 py-2 text-white transition-colors hover:bg-purple-800 disabled:cursor-not-allowed disabled:opacity-50"
       >
         {isDownloading ? (
           <div className="flex items-center gap-2">

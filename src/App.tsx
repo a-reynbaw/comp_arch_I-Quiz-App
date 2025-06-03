@@ -1,6 +1,8 @@
 import ExaminationDialog from './components/ExaminationDialog';
+import LabCard from './components/LabCard';
 import PDFViewer from './components/PDFViewer';
 import QuizCard from './components/QuizCard';
+import { labs } from './utils/labs';
 import { quizzes } from './utils/quizzes';
 import { useState } from 'react';
 
@@ -35,12 +37,25 @@ function App() {
         {/* PDF Books Section */}
         <div className="mt-16">
           <h2 className="mb-8 text-center text-4xl font-bold text-gray-100">Επιπλέον Υλικό</h2>
-           <h3 className="mb-8 text-center text-3xl font-bold text-white">Χρήσιμα Αρχεία</h3>
-            <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3  ">
-              {pdfBooks.map((pdf, index) => (
-                <PDFViewer key={index} title={pdf.title} file={pdf.file} />
-              ))}
+          {/* Lab Exercises Section */}
+          <div className="mb-20 mt-16">
+            <div className="mb-20 mt-16">
+              <h3 className="mb-8 text-center text-3xl font-bold text-gray-100">
+                Εργαστηριακές Ασκήσεις
+              </h3>
+              <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+                {labs.map((lab) => (
+                  <LabCard key={lab.id} lab={lab} />
+                ))}
+              </div>
             </div>
+          </div>
+          <h3 className="mb-8 text-center text-3xl font-bold text-white">Χρήσιμα Αρχεία</h3>
+          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+            {pdfBooks.map((pdf, index) => (
+              <PDFViewer key={index} title={pdf.title} file={pdf.file} />
+            ))}
+          </div>
         </div>
 
         {/* Credit for notes*/}
