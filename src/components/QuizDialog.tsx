@@ -41,7 +41,9 @@ export default function QuizDialog({ quiz, isOpen, onClose }: QuizDialogProps) {
   const question = quiz.questions[0];
 
   const handleAnswerClick = (index: number) => {
-    setSelectedAnswer(index);
+    if (selectedAnswer === null) {
+      setSelectedAnswer(index);
+    }
   };
 
   const handleClose = () => {
@@ -181,7 +183,9 @@ export default function QuizDialog({ quiz, isOpen, onClose }: QuizDialogProps) {
               <div
                 key={index}
                 onClick={() => handleAnswerClick(index)}
-                className={getAnswerClassName(index)}
+                className={`${getAnswerClassName(index)} ${
+                  selectedAnswer !== null && index !== selectedAnswer ? 'pointer-events-none' : ''
+                }`}
               >
                 {renderContent(answer.text)}
               </div>

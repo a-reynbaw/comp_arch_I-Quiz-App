@@ -10,7 +10,7 @@ interface LabQuestion {
   title: string;
   question?: string;
   solution?: string;
-  image?: string[];  // Changed from string to string[]
+  image?: string[]; // Changed from string to string[]
 }
 
 interface Lab {
@@ -51,9 +51,7 @@ export default function LabCard({ lab }: LabCardProps) {
 
   useEffect(() => {
     if (currentQuestion?.image?.length) {
-      Promise.all(
-        currentQuestion.image.map(img => loadImage(img))
-      ).then(loadedImages => {
+      Promise.all(currentQuestion.image.map((img) => loadImage(img))).then((loadedImages) => {
         setCurrentImages(loadedImages.filter(Boolean) as string[]);
       });
     } else {
@@ -127,23 +125,21 @@ export default function LabCard({ lab }: LabCardProps) {
   return (
     <div className="rounded-lg border border-gray-700 bg-gray-900 p-6 shadow-lg transition-shadow hover:shadow-xl">
       <h2 className="mb-2 text-center text-2xl font-bold text-gray-100">{lab.number}</h2>
-       {lab.description && (
-          <h4 className="text-center font-bold text-purple-100">
-            {lab.description}
-          </h4>
-        )}
-        {/* Button to open questions */}
-        <div className="flex flex-1 items-end justify-center">
-          <button
-            onClick={() => {
-              setIsOpen(true);
-              setShowSolution(false);
-            }}
-            className="h-12 mt-6 rounded-lg bg-purple-700 px-4 py-2 text-white transition-colors hover:bg-purple-800"
-          >
-            Άνοιγμα
-          </button>
-        </div>
+      {lab.description && (
+        <h4 className="text-center font-bold text-purple-100">{lab.description}</h4>
+      )}
+      {/* Button to open questions */}
+      <div className="flex flex-1 items-end justify-center">
+        <button
+          onClick={() => {
+            setIsOpen(true);
+            setShowSolution(false);
+          }}
+          className="mt-6 h-12 rounded-lg bg-purple-700 px-4 py-2 text-white transition-colors hover:bg-purple-800"
+        >
+          Άνοιγμα
+        </button>
+      </div>
 
       {isOpen && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
@@ -177,20 +173,20 @@ export default function LabCard({ lab }: LabCardProps) {
               <div className="text-white">
                 <MathJaxContext>
                   {renderContent(currentQuestion.question || '')}
-                    {currentImages.length > 0 && (
-                      <div className="mt-4 flex flex-col gap-4">
-                        {currentImages.map((image, index) => (
-                          <div key={index} className="flex justify-center">
-                            <img
-                              src={image}
-                              alt={`Question ${currentIndex + 1} Illustration ${index + 1}`}
-                              className="h-auto max-w-[600px] rounded-lg border border-gray-700 shadow"
-                              style={{ maxHeight: '400px' }}
-                            />
-                          </div>
-                        ))}
-                      </div>
-                    )}
+                  {currentImages.length > 0 && (
+                    <div className="mt-4 flex flex-col gap-4">
+                      {currentImages.map((image, index) => (
+                        <div key={index} className="flex justify-center">
+                          <img
+                            src={image}
+                            alt={`Question ${currentIndex + 1} Illustration ${index + 1}`}
+                            className="h-auto max-w-[600px] rounded-lg border border-gray-700 shadow"
+                            style={{ maxHeight: '400px' }}
+                          />
+                        </div>
+                      ))}
+                    </div>
+                  )}
                 </MathJaxContext>
               </div>
 

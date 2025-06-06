@@ -87,5 +87,5 @@ export const labs = [
     number: 'Προσομοίωση Εξέτασης',
     description: '',
     questions: mock_exam,
-  }
+  },
 ];
